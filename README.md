@@ -1,6 +1,6 @@
 # The Unreliable Narrator
 
-**[View the live experience →](https://jambot-1948.github.io/The-Unreliable-Narrator/)**
+**[View V1 (Original) →](https://jambot-1948.github.io/The-Unreliable-Narrator/)** | **[View V2 (Enhanced) →](https://jambot-1948.github.io/The-Unreliable-Narrator-v2/)**
 
 A cinematic scroll experience exploring how engineering artifacts — dashboards, pipelines, roadmaps, and KPIs — act as unreliable narrators, producing confidence without shared reality.
 
