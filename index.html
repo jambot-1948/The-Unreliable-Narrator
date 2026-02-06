@@ -346,6 +346,99 @@
             100% { transform: translate(0); }
         }
 
+        /* A24-Style Opening */
+        .a24-opening {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 120px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            position: relative;
+        }
+
+        .a24-opening .a24-label {
+            font-size: 0.55rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.2);
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: a24Fade 2s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        .a24-opening .a24-title {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.95);
+            opacity: 0;
+            animation: a24Fade 2.5s ease forwards;
+            animation-delay: 1.5s;
+        }
+
+        .a24-opening .a24-divider {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.15);
+            margin: 40px 0;
+            opacity: 0;
+            animation: a24Fade 1.5s ease forwards;
+            animation-delay: 3.5s;
+        }
+
+        .a24-opening .a24-line-1 {
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 650px;
+            text-align: center;
+            line-height: 1.8;
+            opacity: 0;
+            animation: a24Fade 2s ease forwards;
+            animation-delay: 4.5s;
+        }
+
+        .a24-opening .a24-line-2 {
+            font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.4);
+            max-width: 600px;
+            text-align: center;
+            line-height: 1.8;
+            margin-top: 30px;
+            opacity: 0;
+            animation: a24Fade 2.5s ease forwards;
+            animation-delay: 6.5s;
+        }
+
+        .a24-opening .a24-scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.12);
+            opacity: 0;
+            animation: a24Fade 1.5s ease forwards, a24Pulse 3s ease-in-out infinite;
+            animation-delay: 9s, 10.5s;
+        }
+
+        @keyframes a24Fade {
+            0% { opacity: 0; transform: translateY(6px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes a24Pulse {
+            0%, 100% { opacity: 0.12; }
+            50% { opacity: 0.25; }
+        }
+
         /* Cinema Title Card */
         .cinema-card {
             position: relative;
@@ -500,6 +593,11 @@
             .tap-hint { display: inline; }
             .hover-hint { display: none; }
 
+            /* A24 opening mobile */
+            .a24-opening { min-height: 100vh; padding: 80px 0; }
+            .a24-title { font-size: clamp(2rem, 10vw, 3rem); }
+            .a24-divider { margin: 28px 0; }
+
             /* Cinema card mobile */
             .cinema-card-inner { padding: 40px 24px; }
             .cinema-card-text { font-size: clamp(1rem, 4.5vw, 1.3rem); line-height: 1.8; }
@@ -550,18 +648,20 @@
         </nav>
 
         <div class="content">
-            <!-- Phase 1: Intro -->
-            <section id="phase1">
-                <div class="phase-reference">Narrative Theory & Systems Engineering</div>
-                <h1 class="phase-title">The Unreliable Narrator</h1>
-                <p class="phase-subtitle">
-                    In literature, the narrator tells a story they believe is true, 
+            <!-- Phase 1: Intro (A24-Style Opening) -->
+            <section id="phase1" class="a24-opening">
+                <div class="a24-label">Narrative Theory & Systems Engineering</div>
+                <h1 class="a24-title">The Unreliable<br>Narrator</h1>
+                <div class="a24-divider"></div>
+                <p class="a24-line-1">
+                    In literature, the narrator tells a story they believe is true,
                     but their perspective is limited by what they don't know.
                 </p>
-                <p class="phase-subtitle" style="opacity: 0.5;">
-                    At work, our artifacts — dashboards, roadmaps, and KPIs — are narrators too. 
+                <p class="a24-line-2">
+                    At work, our artifacts — dashboards, roadmaps, and KPIs — are narrators too.
                     They tell coherent stories. But coherence is not the same thing as truth.
                 </p>
+                <div class="a24-scroll-hint">Scroll to begin</div>
             </section>
 
             <!-- Director's Note -->
