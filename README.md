@@ -19,7 +19,7 @@ In literature, an unreliable narrator tells a story they believe is true, but th
 | 05 | **The System Is the Narrator** | Fight Club (1999) | When validation doesn't equal resilience |
 | 06 | **Decisions Without Memory** | Memento (2000) | Roadmaps that compress uncertainty into optimism |
 | 07 | **Timeline Collapse** | Westworld (2016) | "Ready" means three different things |
-| 08 | **The Ghost in the Machine** | Inception (2010) | Decisions from people who left still run the system |
+| 08 | **The Ghost in the Machine** | Ghost in the Shell (1995) | Decisions from people who left still run the system |
 | 09 | **Closing the Loop** | Looper (2012) | The fossilized backlog and deferred accountability |
 | 10 | **Green Light Theater** | — | Six all-green dashboards, each hiding a different truth |
 | 11 | **Map vs. Territory** | The Truman Show (1998) | The gap between what we measure and what's real |
