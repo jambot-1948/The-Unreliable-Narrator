@@ -373,8 +373,10 @@
                 <a href="#phase6"><span class="nav-number">07</span> Timeline Collapse</a>
                 <a href="#phase8"><span class="nav-number">08</span> The Ghost (Inception)</a>
                 <a href="#phase9"><span class="nav-number">09</span> The Loop (Looper)</a>
-                <a href="#territory"><span class="nav-number">10</span> Map/Territory</a>
-                <a href="#diagnostics"><span class="nav-number">11</span> Field Guide</a>
+                <a href="#greenlight"><span class="nav-number">10</span> Green Light Theater</a>
+                <a href="#territory"><span class="nav-number">11</span> Map/Territory</a>
+                <a href="#reveal"><span class="nav-number">12</span> The Reveal</a>
+                <a href="#diagnostics"><span class="nav-number">13</span> Field Guide</a>
             </div>
         </nav>
 
@@ -594,6 +596,54 @@
                 </div>
             </section>
 
+            <!-- Green Light Theater -->
+            <section id="greenlight">
+                <div class="phase-reference">Scenes from the Daily Stand-Up</div>
+                <h2 class="phase-title">The Green Light Theater</h2>
+                <p class="phase-subtitle">
+                    Every one of these is green. Every one of these is telling you a story.
+                    The interesting part is what the story leaves out.
+                </p>
+
+                <div class="dashboard-grid" style="margin-top: 40px;">
+                    <div class="mini-artifact" data-hint="The dashboard only monitors the services we remembered to instrument. The ones nobody owns aren't on here.">
+                        <div class="metric-label">Grafana Dashboard</div>
+                        <div style="color: #4ade80; font-size: 1.2rem; margin: 8px 0;">All Systems Nominal</div>
+                        <div style="font-size: 0.7rem; color: rgba(255,255,255,0.3);">12 of 12 monitored services healthy</div>
+                    </div>
+                    <div class="mini-artifact" data-hint="The scanner doesn't support the internal framework. It literally can't see the code it's supposed to check.">
+                        <div class="metric-label">Security Scan</div>
+                        <div style="color: #4ade80; font-size: 1.2rem; margin: 8px 0;">0 Vulnerabilities Found</div>
+                        <div style="font-size: 0.7rem; color: rgba(255,255,255,0.3);">Last scan: 3 hours ago</div>
+                    </div>
+                    <div class="mini-artifact" data-hint="95% of tests cover the happy path. The edge cases that cause production incidents have zero coverage.">
+                        <div class="metric-label">Test Coverage</div>
+                        <div style="color: #4ade80; font-size: 1.2rem; margin: 8px 0;">95.2%</div>
+                        <div style="font-size: 0.7rem; color: rgba(255,255,255,0.3);">Above team target of 90%</div>
+                    </div>
+                    <div class="mini-artifact" data-hint="We redefined the measurement window last quarter. Under the old definition, we'd be at 94%.">
+                        <div class="metric-label">SLA Compliance</div>
+                        <div style="color: #4ade80; font-size: 1.2rem; margin: 8px 0;">99.95%</div>
+                        <div style="font-size: 0.7rem; color: rgba(255,255,255,0.3);">Q4 target exceeded</div>
+                    </div>
+                    <div class="mini-artifact" data-hint="Velocity is up because we started splitting stories smaller. Same work, more tickets.">
+                        <div class="metric-label">Sprint Velocity</div>
+                        <div style="color: #4ade80; font-size: 1.2rem; margin: 8px 0;">↑ 23% QoQ</div>
+                        <div style="font-size: 0.7rem; color: rgba(255,255,255,0.3);">Highest velocity in 4 sprints</div>
+                    </div>
+                    <div class="mini-artifact" data-hint="Three of these were closed as 'won't fix' or 'duplicate.' One was auto-resolved by the SLA timer.">
+                        <div class="metric-label">Open Incidents</div>
+                        <div style="color: #4ade80; font-size: 1.2rem; margin: 8px 0;">2 (Down from 6)</div>
+                        <div style="font-size: 0.7rem; color: rgba(255,255,255,0.3);">67% reduction this month</div>
+                    </div>
+                </div>
+
+                <div class="artifact-callout" style="margin-top: 30px;">
+                    Hover to see what's behind the green. None of these are lies — they're all technically accurate.
+                    That's what makes an unreliable narrator so effective.
+                </div>
+            </section>
+
             <!-- Territory: Map vs Ground -->
             <section id="territory">
                 <div class="phase-reference">The Truman Show (1998)</div>
@@ -625,12 +675,31 @@
 
             <!-- Final Reveal -->
             <section id="reveal">
+                <div class="phase-reference">The Point of All This</div>
                 <h2 class="phase-title">The Reveal</h2>
+                <p class="phase-subtitle" style="margin-bottom: 40px;">
+                    This isn't an indictment. It's a recognition.
+                </p>
+
                 <div class="artifact-overlay" style="text-align: center; border-color: #3b82f6;">
-                    <p class="glitch-reveal" style="font-size: 1.6rem; color: rgba(255,255,255,0.9); font-weight: 300; line-height: 1.8;">
-                        Organizations don't fail for lack of data.<br>
-                        They fail because they have 1,000 versions of the truth<br>
-                        <strong>and no way to reconcile the bill.</strong>
+                    <p class="glitch-reveal" style="font-size: 1.4rem; color: rgba(255,255,255,0.9); font-weight: 300; line-height: 1.9;">
+                        Every organization has unreliable narrators.<br>
+                        Not because people are dishonest,<br>
+                        but because <strong>systems are partial by design.</strong>
+                    </p>
+                </div>
+
+                <div style="max-width: 650px; margin-top: 50px;">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.7); font-weight: 300;">
+                        A dashboard can only show what it was built to measure.
+                        A roadmap can only reflect what was agreed to discuss.
+                        A retrospective can only surface what feels safe to say.
+                    </p>
+                    <br>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.7); font-weight: 300;">
+                        That's not failure — that's the nature of any narrative.
+                        The challenge isn't eliminating the narrator.
+                        It's <span style="color: #3b82f6;">remembering there is one.</span>
                     </p>
                 </div>
             </section>
@@ -638,19 +707,39 @@
             <!-- Diagnostics: Field Guide -->
             <section id="diagnostics" style="background: rgba(255,255,255,0.02); padding: 80px 40px; border-radius: 20px;">
                 <p class="artifact-label" style="text-align: center;">Field Guide to Narrative Drift</p>
+                <p class="phase-subtitle" style="margin-bottom: 40px;">Patterns worth noticing — not to assign blame, but to start better conversations.</p>
                 <div class="dashboard-grid">
                     <div class="metric-card">
                         <h3 style="color: #3b82f6; font-size: 0.9rem; margin-bottom: 10px;">The Performance Mirage</h3>
-                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Behavior: Metrics stay green while delivery speed slows to a crawl as the system optimizes for the "Narrator" rather than the work.</p>
+                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Metrics stay green while delivery slows. The system is optimizing for the narrator rather than the work.</p>
+                        <p style="font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 10px; font-style: italic;">Try asking: "What would this dashboard look like if we added the things we chose not to measure?"</p>
                     </div>
                     <div class="metric-card">
                         <h3 style="color: #8b5cf6; font-size: 0.9rem; margin-bottom: 10px;">Semantic Drift</h3>
-                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Behavior: Failed integrations despite "successful" individual milestones. The same words mean different things across the org.</p>
+                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Integrations fail despite "successful" milestones. The same words mean different things to different teams.</p>
+                        <p style="font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 10px; font-style: italic;">Try asking: "When we say 'ready,' what would need to be true for you to ship tomorrow?"</p>
                     </div>
                     <div class="metric-card">
                         <h3 style="color: #ec4899; font-size: 0.9rem; margin-bottom: 10px;">The Archive of Optimism</h3>
-                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Behavior: Strategic paralysis as the "Later" column debt finally comes due, crushing future innovation.</p>
+                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">The "Later" column grows quietly. Deferred decisions compound interest that eventually comes due.</p>
+                        <p style="font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 10px; font-style: italic;">Try asking: "If we could only keep 3 items in 'Later,' which would survive? What does that tell us?"</p>
                     </div>
+                    <div class="metric-card">
+                        <h3 style="color: #f59e0b; font-size: 0.9rem; margin-bottom: 10px;">The Blind Spot Report</h3>
+                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5);">Tools report clean results — not because everything is clean, but because they can only see what they were built to see.</p>
+                        <p style="font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 10px; font-style: italic;">Try asking: "What can't this tool see? What language, service, or path isn't covered?"</p>
+                    </div>
+                </div>
+
+                <div style="max-width: 650px; margin: 60px auto 0; text-align: center;">
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,0.7); font-weight: 300;">
+                        The unreliable narrator isn't a villain. It's a lens.
+                        Once you see it, you start asking different questions —
+                        not "is this metric right?" but <span style="color: #3b82f6;">"what story is this metric trying to tell, and what did it leave out?"</span>
+                    </p>
+                    <p style="font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.5); font-weight: 300; margin-top: 20px;">
+                        That's where the interesting work begins.
+                    </p>
                 </div>
 
                 <div style="margin-top: 80px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px;">
