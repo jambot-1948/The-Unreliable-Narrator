@@ -346,12 +346,106 @@
             100% { transform: translate(0); }
         }
 
+        /* Hover/Tap hint toggle */
+        .tap-hint { display: none; }
+        .hover-hint { display: inline; }
+
+        /* Tablet Styles */
+        @media (max-width: 1100px) {
+            .page-layout { grid-template-columns: 220px 1fr; }
+            .sidebar-nav { padding: 36px 12px 30px; }
+            .sidebar-links a { font-size: 0.7rem; padding: 8px 10px; }
+            .content { padding: 0 32px; }
+        }
+
         /* Mobile Styles */
         @media (max-width: 900px) {
             .page-layout { grid-template-columns: 1fr; }
             .sidebar-nav { display: none; }
-            .content { padding: 0 24px; }
+            .content { padding: 0 20px; }
             .roadmap-columns { grid-template-columns: 1fr; }
+
+            section {
+                min-height: auto;
+                padding: 60px 0;
+            }
+
+            .phase-title {
+                font-size: clamp(1.5rem, 6vw, 2.5rem);
+            }
+
+            .artifact-overlay {
+                padding: 24px 16px;
+                margin: 24px 0;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metric-value {
+                font-size: 1.4rem;
+            }
+
+            .phase-cinema {
+                max-width: 100%;
+            }
+
+            /* Tooltip: tap to reveal on mobile */
+            .mini-artifact:hover::after,
+            .mini-artifact:focus::after,
+            .mini-artifact.tapped::after {
+                bottom: auto;
+                top: 100%;
+                margin-top: 8px;
+                left: 0;
+                right: 0;
+                width: auto;
+                max-width: 100%;
+                position: relative;
+                display: block;
+            }
+
+            .mini-artifact::after {
+                display: none;
+            }
+
+            .mini-artifact.tapped::after {
+                content: "Hidden Truth: " attr(data-hint);
+                background: #ec4899;
+                color: white;
+                font-size: 0.7rem;
+                padding: 8px 12px;
+                border-radius: 4px;
+                line-height: 1.4;
+                display: block;
+                position: relative;
+                margin-top: 8px;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            /* Show tap hint, hide hover hint */
+            .tap-hint { display: inline; }
+            .hover-hint { display: none; }
+        }
+
+        /* Small phone */
+        @media (max-width: 400px) {
+            .content { padding: 0 14px; }
+
+            section { padding: 40px 0; }
+
+            .artifact-overlay { padding: 16px 12px; }
+
+            .phase-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .truth-btn {
+                padding: 10px 12px;
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -467,7 +561,7 @@
                     </div>
                 </div>
                 <div class="artifact-callout">
-                    Hover over the artifacts to see the "Hidden Truth." Coherence is often manufactured.
+                    <span class="hover-hint">Hover over</span><span class="tap-hint">Tap</span> the artifacts to see the "Hidden Truth." Coherence is often manufactured.
                 </div>
             </section>
 
@@ -586,9 +680,18 @@
                 <div class="artifact-overlay">
                     <div class="artifact-label">The Fossilized Backlog</div>
                     <ul style="list-style: none; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
-                        <li style="margin-bottom: 12px;">• Fix Auth Bypass workaround <span style="color: rgba(255,255,255,0.2); float: right;">Added 640 days ago</span></li>
-                        <li style="margin-bottom: 12px;">• Reconcile divergent schemas <span style="color: rgba(255,255,255,0.2); float: right;">Added 412 days ago</span></li>
-                        <li style="margin-bottom: 12px;">• Technical Debt Sprint <span style="color: #f87171; float: right;">DEFERRED</span></li>
+                        <li style="margin-bottom: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px;">
+                            <span>• Fix Auth Bypass workaround</span>
+                            <span style="color: rgba(255,255,255,0.2);">Added 640 days ago</span>
+                        </li>
+                        <li style="margin-bottom: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px;">
+                            <span>• Reconcile divergent schemas</span>
+                            <span style="color: rgba(255,255,255,0.2);">Added 412 days ago</span>
+                        </li>
+                        <li style="margin-bottom: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px;">
+                            <span>• Technical Debt Sprint</span>
+                            <span style="color: #f87171;">DEFERRED</span>
+                        </li>
                     </ul>
                     <div class="artifact-callout">
                         The "Later" column is the Unreliable Narrator's favorite hiding spot. It transforms "Broken" into "Planned."
@@ -639,7 +742,7 @@
                 </div>
 
                 <div class="artifact-callout" style="margin-top: 30px;">
-                    Hover to see what's behind the green. None of these are lies — they're all technically accurate.
+                    <span class="hover-hint">Hover</span><span class="tap-hint">Tap</span> to see what's behind the green. None of these are lies — they're all technically accurate.
                     That's what makes an unreliable narrator so effective.
                 </div>
             </section>
@@ -784,6 +887,16 @@
             });
         }, observerOptions);
         document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+        // Mobile: tap to reveal hidden truths
+        document.querySelectorAll('.mini-artifact').forEach(artifact => {
+            artifact.addEventListener('click', function() {
+                // On mobile, toggle the tapped state
+                if (window.innerWidth <= 900) {
+                    this.classList.toggle('tapped');
+                }
+            });
+        });
     </script>
 </body>
 </html>
